@@ -1,0 +1,311 @@
+<html>
+
+<head>
+    <title>Form</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"crossorigin="anonymous"/>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <script src="form.js"></script>
+
+</head>
+<style>
+     .wrongDetails{
+        display:block;
+        animation: slide 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+     }
+
+    
+
+  
+     @keyframes slide {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+</style>
+   
+<body>
+
+    <div class="wrongDetails w-4/12  h-20 bg-red-400 m-auto text-white text-xl">
+    <h1>Fields cannot be empty</h1>
+    
+    </div>
+
+ 
+    <div id="formContainer" class="absolute top-48 left-48">
+        <div id="header"> </div>
+
+        <input type="email" placeholder="email" id="email"/>
+        <div class="input-group mt-6 border border-current bg-white px-2 rounded">
+            <div class="flex justify-center items-center">
+                <input class="w-full py-1 focus:outline-none text-black" type="password" name="password" id="password" placeholder="Enter password"/><i class=" text-red-500 far fa-eye" id="togglePassword"></i>
+            </div>
+        </div>
+
+        <button onclick="signUp()" id="signUp"> Sign Up </button>
+       <button onclick="signIn()" id="signIn"> Sign In </button>
+       <!-- <button onclick="signOut()" id="signOut"> Sign out </button> -->
+       
+
+    </div>
+
+
+
+    
+    <!-- Add content to the popup -->
+   
+
+    
+
+
+</body>
+
+<style>
+
+    body{
+        background-color: aqua;
+
+    }
+    h1{
+        background-color: #ff4d4d;
+        margin:100px auto;
+        text-align:center;
+        color:white;
+    }
+
+    #formContainer{
+        background-color: white;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+        width:25%;
+        height:45%;
+        margin: 10px auto;
+    }
+
+    #header{
+        width:100%;
+        height:10px;
+        background: black;
+    }
+
+    #email{
+        width:70%;
+        height:40px;
+        display:block;
+        margin:25 auto;
+        border:none;
+        outline:none;
+        border-bottom: 2px solid black;
+    }
+
+    /* #password{
+        width:70%;
+        height:40px;
+        display:block;
+        margin:0 auto;
+        border:none;
+        outline:none;
+        border-bottom: 2px solid black;
+    } */
+
+    #signIn{
+        background-color: #000000;
+        color:white;
+        border:none;
+        padding: 15px 32px;
+        border-radius:10px;
+        text-align: center;
+        text-decoration: none;
+        display:inline-block;
+        font-size:13px;
+
+    }
+    #signUp{
+        background-color: #000000;
+        color:white;
+        border:none;
+        padding: 15px 32px;
+        border-radius:10px;
+        text-align: center;
+        text-decoration: none;
+        display:inline-block;
+        font-size:13px;
+
+    }
+
+    #signOut{
+        background-color: #fffa65;
+        color:rgb(0, 0, 0);
+        border:none;
+        padding: 10px 32px;
+        border-radius:10px;
+        text-align: center;
+        text-decoration: none;
+        display:inline-block;
+        font-size:13px;
+        margin-top:12px;
+        margin:112px;
+    }
+
+    button:hover{
+        box-shadow: 0px 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+
+    }
+
+</style>
+
+
+
+
+
+ <!-- Include jQuery -->
+ <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+
+ <!-- Include jQuery Popup Overlay
+ <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js">
+ </script> -->
+
+
+ 
+<!-- 
+ <script>
+   $(document).ready(function() {
+
+     // Initialize the plugin
+     $('#JPO').popup();
+
+     // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
+     $.fn.popup.defaults.pagecontainer = '#page';
+
+   });
+
+   </script> -->
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div id="JPO" class="bg-white rounded md:w-1/2 w-11/12 mx-auto shadow animate__animated animate__zoomIn animate__faster">
+        <p class="font-medium text-lg border-b px-7 py-2">
+            Change Your Subscription Plan</p>
+        <p class="py-1 px-7 text-sm">
+            Upgrade to a new subscription plan, or switch from monthly to yearly billing. New plans take effect immediately, and we use proration when changing plans and billing cycles. This means your first invoice on the new plan will subtract any amount of unused, leftover time from your previous plan.
+        </p>
+        <table class="w-full text-sm my-2 text-left">
+            <tr class="border-b">
+                <th class="font-bold pl-7 py-2">Plan Name</th>
+                <th class="font-bold py-2">Price</th>
+                <th class="font-bold py-2">New Plan</th>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Hobbyist Monthly</td>
+                <td class="py-2">$5</td>
+                <td class="py-2">Current</td>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Hobbyist Yearly</td>
+                <td class="py-2">$25</td>
+                <td class="py-2"><input name="plan" id="hobYear" type="radio"></td>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Business Monthly</td>
+                <td class="py-2">$49</td>
+                <td class="py-2"><input name="plan" id="busMon" type="radio"></td>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Business Yearly</td>
+                <td class="py-2">$79</td>
+                <td class="py-2"><input name="plan" id="busYear" type="radio"></td>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Professional Monthly</td>
+                <td class="py-2">$45</td>
+                <td class="py-2"><input name="plan" id="proMon" type="radio"></td>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Professional Yearly</td>
+                <td class="py-2">$100</td>
+                <td class="py-2"><input name="plan" id="proYear" type="radio"></td>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Influencer Monthly</td>
+                <td class="py-2">$99</td>
+                <td class="py-2"><input name="plan" id="infMon" type="radio"></td>
+            </tr>
+
+            <tr class="border-b">
+                <td class="pl-7 py-2">Influencer Yearly</td>
+                <td class="py-2">$200</td>
+                <td class="py-2"><input name="plan"  id="infYear" type="radio"></td>
+            </tr>
+        </table>
+
+        <!-- Add a button to close the popup (optional) -->
+        <!-- <input type="button" class="JPO_close text-white text-sm rounded-full px-5 py-3 float-right mr-10 my-7" style="background-color: #FF7D69;" value="CLOSE" onclick="evalPlan()" /> -->
+        <!-- <button class="JPO_close text-white text-sm rounded-full px-5 py-3 float-right mr-10 my-7" style="background-color: #FF7D69;">Change to Business Monthly</button> -->
+    <!-- </div>
+
+    <input type="button" class="JPO_open text-white text-sm rounded-full px-5 py-3 float-right mr-10 my-7" style="background-color: #FF7D69;" value="Eval Group" onclick="evalPlan()" /> --> -->

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="mt-40">
+    <form id="contactForm">
+        <div class="lg:w-5/12 md:7/12 10/12 m-auto bg-gray-200 px-6 mx-6 py-12 border border-current">
+        
+        <input type="text" id="name" placeholder="Enter name" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black">
+        <input type="text" id="company" placeholder="Enter company" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black">
+        <input type="text" id="email" placeholder="email" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black">
+        <input type="text" id="phone" placeholder="phone" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black">
+        <textarea name="message" id="message" class="w-11/12 mt-6" id="" rows="5"></textarea>
+        
+        <input type="submit" class="mt-6 py-1 px-2 bg-black text-white hover:bg-gray-600" value="SUBMIT">
+        </div>
+    </form>
+
+
+
+    <script>
+
+         // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAglyyyqzM0Mji52iKwAGBrAZiAUz2QX-s",
+    authDomain: "form-a2fa1.firebaseapp.com",
+    projectId: "form-a2fa1",
+    storageBucket: "form-a2fa1.appspot.com",
+    messagingSenderId: "195902252855",
+    appId: "1:195902252855:web:13a5e6a3815250d9f55cb2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    //refrence messages
+    
+    var messagesRef = firebase.database().ref("messages");
+
+
+
+    //Listen for form submit
+    document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+    function submitForm(e){
+        e.preventDefault();
+        
+        let name = getInputVal('name');
+        let company = getInputVal('company');
+        let email = getInputVal('email');
+        let phone = getInputVal('phone');
+        let message = getInputVal('message');
+
+        //save message
+        saveMessage(name, company, email, phone, message);
+
+    }
+
+    //function to get form values
+    function getInputVal(id){
+        return document.getElementById(id).value;
+    }
+
+    
+    //save to firebase
+    function saveMessage(name, company, email, phone, message){
+        var newMessageRef = messagesRef.push();
+        newMessageRef.set({
+            name:name,
+            company: company,
+            email:email,
+            phone:phone,
+            message:message,
+
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
