@@ -1,0 +1,155 @@
+html {
+	height: 100%;
+	width: 100%;
+	background-image:url('https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+	background-repeat: repeat-x;
+	background-position: 0 20%;
+	background-size: 2000px;
+	animation: 50s para infinite linear;
+	}
+
+	@keyframes para {
+	100% {
+		background-position: 
+			-5000px 20%;
+		}
+	}
+
+    .login-div{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	box-sizing:border-box;
+    overflow-y: hidden;
+
+	}
+
+	.shadow{
+		box-shadow: 0px 1px 12px 5px rgba(0, 0, 0, 0.342);
+	}
+
+        .spin {
+        border-radius: 50%;
+        transition:transform .8s ease-in-out;
+        }
+        .spin:hover {
+        transform: rotate(360deg);
+}
+
+.kara{
+  color: blanchedalmond;
+  animation: fade 1s ease-in infinite;
+}
+
+
+@keyframes fade {
+  0%{
+      color:transparent;
+  }
+  18%{
+      color:white;
+  }
+  32%{
+      color:greenyellow;
+  }
+  50%{
+      color:hotpink;
+  }
+  70%{
+      color:greenyellow;
+  }
+  87%{
+      color:white;
+  }
+  100%{
+      color:transparent;
+  }
+}
+
+
+
+.regis{
+        font-family:Roos St Regis Display;
+      }
+              
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color:rgb(0, 0, 0);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s; 
+    text-align: center;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+    padding-left:20px;
+
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .sidenav .closebtn:hover{
+    color:red;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  header{
+        position: fixed;
+        top:0;
+        left:0;
+        transition: 0.6s;
+    }
+
+    header .logo{
+        position: relative;
+        transition: 0.6s;
+       
+    }
+    .navbi{
+        position: relative;
+        transition: 0.6s;
+    }
+
+    header.sticky{
+        padding: 4px 30px;
+        background:rgba(0, 0, 0, 0.753);
+        z-index: 1;
+    }
+    header.logo,
+    header.sticky {
+        color:rgb(207, 13, 13);
+    }
+
+    .shadowi{
+      box-shadow:
+                5px 5px 15px  rgba(0, 0, 0, 0.3),
+                -5px -5px 15px  rgba(0,0,0,0.1);
+    }
+
+
+    .submit-btn:disabled {
+        cursor: not-allowed;
+    }

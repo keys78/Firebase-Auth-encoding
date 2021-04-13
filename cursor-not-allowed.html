@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <textarea class="input" id="textsend" onkeyup="success()" name="demo" placeholder="Enter your Message..."></textarea>
+   <button type="submit" id="button" disabled>Send</button>
+
+   <script>
+       function success() {
+        if(document.getElementById("textsend").value==="") { 
+               document.getElementById('button').disabled = true; 
+               document.getElementById('button').style.background = "red";
+           } else { 
+               document.getElementById('button').disabled = false;
+               document.getElementById('button').style.background = "green"; 
+           }
+       }
+
+
+
+
+
+    //    if(firstName.value==="") { 
+    //            document.querySelector(".submit-btn").disabled = true; 
+    //            document.querySelector(".submit-btn").style.background = "red";
+    //        } else { 
+    //            document.querySelector(".submit-btn").disabled = false;
+    //            document.querySelector(".submit-btn").style.background = "green"; 
+    //        }
+    //    }
+   </script>
+</body>
+</html>

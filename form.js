@@ -33,8 +33,8 @@
 
 
 
-    const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-    promise.catch(e => alert(e.message));
+    // const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+    // promise.catch(e => alert(e.message));
 
     
 

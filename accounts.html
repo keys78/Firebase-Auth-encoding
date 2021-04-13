@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- The core Firebase JS SDK is always required and must be listed first
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script> -->
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<!-- <script src="form.js"></script> -->
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(38, 19, 207);
+    }
+</style>
+<body>
+  <button onclick="signOut()" id="signOut"> Sign out </button>
+  <a href="form.js"><button id="signOut"> Sign out </button></a>
+
+
+
+
+
+  <form id="contactForm"class="mt-40">
+    <div class="lg:w-5/12 md:w-7/12 mx-auto w-10/12 bg-gray-200 px-6 mx-6 py-12 border border-current">
+    
+    <div id="nameTest" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black"></div>
+    <div id="lastTest" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black"> </div>
+    <div  id="mailTest" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black"> </div>
+    <div id="phone" class="mt-4 py-2 px-3 border border-current w-11/12 m-auto bg-white text-black"> </div>
+    
+    <input type="submit" class="mt-6 py-1 px-2 bg-black text-white hover:bg-gray-600" value="SUBMIT">
+    </div>
+</form>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', getInfo)
+    const newDat = document.querySelector('#nameTest')
+    const lasto = document.querySelector('#lastTest')
+    const mailo = document.querySelector('#mailTest')
+    const phone = document.querySelector('#phone')
+  
+  function getInfo() {
+    const firstoo = localStorage.getItem('nameTest');
+    const lastoo = localStorage.getItem('lastTest');
+    const mailoo = localStorage.getItem('mailTest');
+    const pnum = localStorage.getItem('pnumTest');
+    newDat.appendChild(document.createTextNode(firstoo));
+    lasto.appendChild(document.createTextNode(lastoo));
+    mailo.appendChild(document.createTextNode(mailoo));
+    phone.appendChild(document.createTextNode(pnum));
+  } 
+  
+  </script>
+</body>
+</html>
