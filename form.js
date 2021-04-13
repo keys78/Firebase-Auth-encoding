@@ -97,7 +97,7 @@
   }
 
   auth.onAuthStateChanged(function(user) {
-    // const kobi = document.getElementsByClassName("kobi");
+
       if(user) {
 
         var email = user.email;
@@ -115,28 +115,4 @@
    
   });
 
-  var togglePassword = document.querySelector('#togglePassword');
-  var password = document.getElementById("password");
-
-    togglePassword.addEventListener('click', function () {
-        // toggle the type attribute
-        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-        password.setAttribute('type', type);
-        // toggle the eye slash icon
-        this.classList.toggle('fa-eye-slash');
-    });
-
-
-
-///////////////TEST ////////////////
-
-//NUMBER 3
-const totalNumberOfRows = 5;
-const output = "";
-for (var i = 1; i <= totalNumberOfRows; i++) {
-   for (var t = 1; t <= i; t++) {
-      output += t + " ";
-   }
-   console.log(output);
-   output = "";
-}
+  

@@ -8,7 +8,7 @@
      <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
-<!-- <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
 
     <title>Furniture and Interior Decor procurement site</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"crossorigin="anonymous"/>
@@ -126,15 +126,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
         
     <script>
 
@@ -236,11 +227,11 @@
 
         name = firstName.value
         last = surname.value
-        email = email.value
-        phone = phone.value
+        hemail = email.value
+        hphone = phone.value
        
 
-        saveUser(name, last, email, phone);
+        saveUser(name, last);
      
       });
      
@@ -258,13 +249,13 @@
 
 
      //save to firebase
-        function saveUser(first, last, email, phone, password){
+        function saveUser(first, last, hemail, hphone){
         const newUserRef = userRef.push();
         newUserRef.set({
-            name:name,
+            first:name,
             last:last,
-            email:email,
-            phone:phone
+            hemail:email,
+            hphone:phone
 
         });
     }
